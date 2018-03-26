@@ -48,3 +48,13 @@ double Rental::getCharge()
     
     return thisAmount;
 }
+
+int Rental::getFrequententerPoints()
+{
+    int frequentRenterPoints = 1;
+    
+    if (getMovie().getPriceCode() == Movie::NEW_RELEASE && getRentalDays() > 1)
+        ++frequentRenterPoints;
+    
+    return frequentRenterPoints;
+}

@@ -24,6 +24,10 @@ public:
     std::string statement();
     
 private:
+    double getTotalAmount();
+    int getTotalFrequentPoints();
+    
+private:
     std::string _name;
     std::list<Rental> _list;
 };

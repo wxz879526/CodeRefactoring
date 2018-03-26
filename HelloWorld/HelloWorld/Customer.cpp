@@ -26,22 +26,37 @@ std::string Customer::getName()
 
 std::string Customer::statement()
 {
-    double totalAmount = 0;
-    int frequentRenterPoints = 0;
-    
     auto result = "Rental record for " + getName() + "\n";
     for (auto rental : _list)
     {
-        ++frequentRenterPoints;
-        
-        if (rental.getMovie().getPriceCode() == Movie::NEW_RELEASE && rental.getRentalDays() > 1)
-            ++frequentRenterPoints;
-        
         result += "\t" + rental.getMovie().getTitle() + "\t" + std::to_string(rental.getCharge()) + "\n";
-        totalAmount += rental.getCharge();
     }
     
-    result += "Amount owned is " + std::to_string(totalAmount) + "\n";
-    result += "You earned " + std::to_string(frequentRenterPoints) + " frequent renter points";
+    result += "Amount owned is " + std::to_string(getTotalAmount()) + "\n";
+    result += "You earned " + std::to_string(getTotalFrequentPoints()) + " frequent renter points";
     return result;
+}
+
+double Customer::getTotalAmount()
+{
+    double totalAmount = 0;
+    
+    for (auto r : _list)
+    {
+        totalAmount += r.getCharge();
+    }
+    
+    return totalAmount;
+}
+
+int Customer::getTotalFrequentPoints()
+{
+    int totalFrequentPoints = 0;
+    
+    for (auto r : _list)
+    {
+        totalFrequentPoints += r.getFrequententerPoints();
+    }
+    
+    return totalFrequentPoints;
 }

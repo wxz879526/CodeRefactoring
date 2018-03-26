@@ -20,6 +20,7 @@ public:
     int getRentalDays();
     
     double getCharge();
+    int getFrequententerPoints();
     
 private:
     Movie _movie;
