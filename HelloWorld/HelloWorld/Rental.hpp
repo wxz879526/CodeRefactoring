@@ -19,6 +19,8 @@ public:
     Movie getMovie();
     int getRentalDays();
     
+    double getCharge();
+    
 private:
     Movie _movie;
     int _days;

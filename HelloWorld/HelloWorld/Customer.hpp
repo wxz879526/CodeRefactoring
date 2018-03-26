@@ -24,9 +24,6 @@ public:
     std::string statement();
     
 private:
-    double amountFor(Rental rental);
-    
-private:
     std::string _name;
     std::list<Rental> _list;
 };
