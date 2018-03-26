@@ -32,15 +32,13 @@ std::string Customer::statement()
     auto result = "Rental record for " + getName() + "\n";
     for (auto rental : _list)
     {
-        auto thisAmount = rental.getCharge();
-        
         ++frequentRenterPoints;
         
         if (rental.getMovie().getPriceCode() == Movie::NEW_RELEASE && rental.getRentalDays() > 1)
             ++frequentRenterPoints;
         
-        result += "\t" + rental.getMovie().getTitle() + "\t" + std::to_string(thisAmount) + "\n";
-        totalAmount += thisAmount;
+        result += "\t" + rental.getMovie().getTitle() + "\t" + std::to_string(rental.getCharge()) + "\n";
+        totalAmount += rental.getCharge();
     }
     
     result += "Amount owned is " + std::to_string(totalAmount) + "\n";
