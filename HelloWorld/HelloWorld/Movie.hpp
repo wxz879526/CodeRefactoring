@@ -11,6 +11,8 @@
 
 #include <string>
 
+#include "IPrice.h"
+
 class Movie
 {
 public:
@@ -34,6 +36,7 @@ public:
 private:
     std::string _title;
     int _priceCode;
+    IPrice * _impl;
 };
 
 #endif /* Movie_hpp */

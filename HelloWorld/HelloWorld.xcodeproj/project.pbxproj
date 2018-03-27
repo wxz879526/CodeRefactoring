@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41241785206A8C1500174342 /* RegularMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41241783206A8C1500174342 /* RegularMovie.cpp */; };
+		41241788206A8DC100174342 /* ChildrenMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41241786206A8DC100174342 /* ChildrenMovie.cpp */; };
+		4124178B206A8DD500174342 /* NewReleaseMovie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41241789206A8DD500174342 /* NewReleaseMovie.cpp */; };
 		41C733A0205953A000D142AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41C7339F205953A000D142AA /* main.cpp */; };
 		41C733A82064005400D142AA /* Movie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41C733A62064005400D142AA /* Movie.cpp */; };
 		41C733AB2064029800D142AA /* Rental.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41C733A92064029800D142AA /* Rental.cpp */; };
@@ -26,6 +29,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41241782206A8AF700174342 /* IPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPrice.h; sourceTree = "<group>"; };
+		41241783206A8C1500174342 /* RegularMovie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RegularMovie.cpp; sourceTree = "<group>"; };
+		41241784206A8C1500174342 /* RegularMovie.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RegularMovie.hpp; sourceTree = "<group>"; };
+		41241786206A8DC100174342 /* ChildrenMovie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChildrenMovie.cpp; sourceTree = "<group>"; };
+		41241787206A8DC100174342 /* ChildrenMovie.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChildrenMovie.hpp; sourceTree = "<group>"; };
+		41241789206A8DD500174342 /* NewReleaseMovie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NewReleaseMovie.cpp; sourceTree = "<group>"; };
+		4124178A206A8DD500174342 /* NewReleaseMovie.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NewReleaseMovie.hpp; sourceTree = "<group>"; };
 		41C7339C205953A000D142AA /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C7339F205953A000D142AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		41C733A62064005400D142AA /* Movie.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Movie.cpp; sourceTree = "<group>"; };
@@ -73,6 +83,13 @@
 				41C733AA2064029800D142AA /* Rental.hpp */,
 				41C733AC206403B400D142AA /* Customer.cpp */,
 				41C733AD206403B400D142AA /* Customer.hpp */,
+				41241782206A8AF700174342 /* IPrice.h */,
+				41241783206A8C1500174342 /* RegularMovie.cpp */,
+				41241784206A8C1500174342 /* RegularMovie.hpp */,
+				41241786206A8DC100174342 /* ChildrenMovie.cpp */,
+				41241787206A8DC100174342 /* ChildrenMovie.hpp */,
+				41241789206A8DD500174342 /* NewReleaseMovie.cpp */,
+				4124178A206A8DD500174342 /* NewReleaseMovie.hpp */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -136,6 +153,9 @@
 			files = (
 				41C733AB2064029800D142AA /* Rental.cpp in Sources */,
 				41C733A82064005400D142AA /* Movie.cpp in Sources */,
+				4124178B206A8DD500174342 /* NewReleaseMovie.cpp in Sources */,
+				41241785206A8C1500174342 /* RegularMovie.cpp in Sources */,
+				41241788206A8DC100174342 /* ChildrenMovie.cpp in Sources */,
 				41C733A0205953A000D142AA /* main.cpp in Sources */,
 				41C733AE206403B400D142AA /* Customer.cpp in Sources */,
 			);

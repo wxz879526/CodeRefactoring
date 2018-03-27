@@ -8,11 +8,16 @@
 
 #include "Movie.hpp"
 
+#include "RegularMovie.hpp"
+#include "ChildrenMovie.hpp"
+#include "NewReleaseMovie.hpp"
+
 Movie::Movie(std::string title, int code)
 : _title(title)
 , _priceCode(code)
+, _impl(nullptr)
 {
-   
+    setPriceCode(code);
 }
 
 std::string Movie::getTitle()
@@ -33,38 +38,34 @@ int Movie::getPriceCode()
 void Movie::setPriceCode(int code)
 {
     _priceCode = code;
-}
-
-double Movie::getCharge(int rentalDays)
-{
-    double thisAmount = 0;
-    switch (getPriceCode()) {
+    
+    switch (code) {
         case Movie::REGULAR:
-            thisAmount += 2;
-            if (rentalDays > 2)
-                thisAmount += (rentalDays - 2) * 1.5;
+            _impl = new RegularMovie();
             break;
         case Movie::NEW_RELEASE:
-            thisAmount += (rentalDays * 3);
+            _impl = new NewReleaseMovie();
             break;
         case Movie::CHILDRENS:
-            thisAmount += 1.5;
-            if (rentalDays > 3)
-                thisAmount += (rentalDays - 3) * 1.5;
+            _impl = new ChildrenMovie();
             break;
         default:
             break;
     }
+}
+
+double Movie::getCharge(int rentalDays)
+{
+    if (_impl != nullptr)
+        return _impl->getCharge(rentalDays);
     
-    return thisAmount;
+    return 0;
 }
 
 int Movie::getFrequententerPoints(int rentalDays)
 {
-    int frequentRenterPoints = 1;
+    if (_impl != nullptr)
+        return _impl->getFrequentPoints(rentalDays);
     
-    if (getPriceCode() == Movie::NEW_RELEASE && rentalDays > 1)
-        ++frequentRenterPoints;
-    
-    return frequentRenterPoints;
+    return 0;
 }
