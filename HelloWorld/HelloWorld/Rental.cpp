@@ -27,34 +27,10 @@ int Rental::getRentalDays()
 
 double Rental::getCharge()
 {
-    double thisAmount = 0;
-    switch (getMovie().getPriceCode()) {
-        case Movie::REGULAR:
-            thisAmount += 2;
-            if (getRentalDays() > 2)
-                thisAmount += (getRentalDays() - 2) * 1.5;
-            break;
-        case Movie::NEW_RELEASE:
-            thisAmount += (getRentalDays() * 3);
-            break;
-        case Movie::CHILDRENS:
-            thisAmount += 1.5;
-            if (getRentalDays() > 3)
-                thisAmount += (getRentalDays() - 3) * 1.5;
-            break;
-        default:
-            break;
-    }
-    
-    return thisAmount;
+    return _movie.getCharge(_days);
 }
 
 int Rental::getFrequententerPoints()
 {
-    int frequentRenterPoints = 1;
-    
-    if (getMovie().getPriceCode() == Movie::NEW_RELEASE && getRentalDays() > 1)
-        ++frequentRenterPoints;
-    
-    return frequentRenterPoints;
+    return _movie.getFrequententerPoints(_days);
 }

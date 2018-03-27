@@ -28,6 +28,9 @@ public:
     
     void setPriceCode(int code);
     
+    double getCharge(int rentalDays);
+    int getFrequententerPoints(int rentalDays);
+    
 private:
     std::string _title;
     int _priceCode;
